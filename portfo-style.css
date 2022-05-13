@@ -1,0 +1,276 @@
+/*set and reset all*/
+*{
+    box-sizing: border-box;
+}
+
+html, body, h1,h2,h3,h4,h5,h6,
+p,div, ul, li, img, span, input, form, 
+footer{
+    padding : 0;
+    margin : 0;
+}
+
+/*create color variables*/
+:root{
+    --teal:rgb(12, 236, 221);
+    --yellow:rgb(255, 243, 56);
+    --pink:rgb(255, 103, 231);
+    --purple:rgb(255, 103, 231);
+}
+
+
+body{
+    font-family: monospace;
+    overflow-x: hidden;
+}
+
+#navbar{
+    background-color: rgba(12,238,221,1);
+    position : fixed;
+    top : 0;
+    left:0;
+    margin : 0;
+    padding :0;
+    width : 100%;
+    z-index: 2;
+    display : flex;
+    justify-content: space-between;
+    height: 10vh;
+}
+.name-dev{
+    font-size: 2.5em;
+    font-weight : bolder;
+    cursor:context-menu;
+    line-height: 10vh;
+}
+
+.name-dev > span{
+    visibility: hidden;
+    color : black;
+    font-weight: 1000;
+}
+
+.name-dev:hover,.name-dev:hover > span{
+    visibility: visible;
+    text-decoration: underline;
+    color :darkgoldenrod;
+    transition: all 400ms ease-in-out;
+}
+
+.nav-right{
+    width : 50%;
+}
+ul{
+    display : flex;
+    justify-content: space-around;
+    line-height: 10vh;
+}
+
+li{
+    list-style-type: none;
+}
+
+li > a:link{
+    text-decoration: none;
+    color: black;
+    font-size : 1.7em;
+    display: inline-block;
+}
+li>a:hover{
+    background-color: var(--purple);
+    color : white;
+    text-shadow: 2px 2px 4px black;
+    transition: all 100ms ease-in-out;
+}
+
+#welcome-section{
+    background: #56CCF2;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #2F80ED, #56CCF2);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #2F80ED, #56CCF2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 100vh;
+}
+
+#circle{
+    height: 20em;
+    width : 20em;
+    background: #c2e59c;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #64b3f4, #c2e59c);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #64b3f4, #c2e59c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 50%;
+    position : relative;
+    left : 30em;
+    top : 11em;
+}
+
+#square{
+    height: 20em;
+    width : 15em;
+    border-radius: 3em;
+    backdrop-filter: blur(7px);
+    transform: rotate(25deg);
+    opacity : 0.5;
+    position: relative;
+    left: 40em;
+    bottom : 10em;
+    z-index: 0;
+    background: #fffc00;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #ffffff, #fffc00);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #ffffff, #fffc00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.title{
+    position : relative;
+    bottom : 16em;
+    left : 40em;
+    font-size: 130%;
+    color : whitesmoke;
+    font-weight: bolder;
+}
+
+.subtitle{
+    position : relative;
+    bottom : 5em;
+    left : 20em;
+    color : whitesmoke;
+    font-size : 150%;
+    letter-spacing: 1.1em;
+    font-weight: bolder;
+}
+
+.intro-section{
+    height: 40%;
+    position : relative;
+}
+.container{
+    width : 90%;
+    max-width: 1290px;
+    margin : 0 auto;
+}
+
+.profile-box{
+    padding : 2em 5em 3em 6em;
+}
+#profile{
+    width : 60%;
+    padding : 3em 5em 3em 5em;
+    background: rgba( 245, 245, 245, 0.45 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 12.5px );
+    -webkit-backdrop-filter: blur( 12.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    margin : auto auto;
+}
+
+.photo-profile{
+    width : 11em;
+    height: 11em;
+    transform: rotate(45deg);
+    background-color: blue;
+    position : absolute;
+    bottom : 19%;
+    left : 68%;
+    background: white;
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 12.5px );
+    -webkit-backdrop-filter: blur( 12.5px );
+    overflow: hidden;
+}
+
+.photo-profile::before{
+    content: "";
+    position :absolute;
+    background: url('asset/profile_pic-removebg-preview.png') 0 0 repeat;
+    width : 100%;
+    height: 155%;
+    transform: rotate(-45deg);
+    bottom : 90%;
+    left : 20%;
+    top : 5%;
+    background-position: center;
+}
+
+
+#projects{
+    background-color: var(--teal);
+    width : 1350px;
+    height: 100%;
+    padding-bottom: 5%;
+}
+#projects > .container{
+    display : grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap : 5%;
+    row-gap : 5%;
+    justify-content: center;
+}
+
+.project-tile{
+    width : 100%;
+    height: 70%;
+    display : flex;
+    background-color: var(--teal);
+    border: 2px solid white;
+    border-radius: 10px;
+    position : relative;
+    margin-top : 15%;
+    box-shadow: -5px -1px 6px 1px rgba(0,0,0,0.75);
+}
+
+.more-button>a{
+    grid-row: 3;
+    grid-column: 1/span 2;
+}
+.project-par{
+    width :49%;
+    line-height: 1.5em;
+    padding : 1em 0 0 1em;
+}
+
+.project-par > h3{
+    font-size : 1.5em;
+}
+
+.project-par>p{
+    font-weight: bold;
+}
+
+.more-buttom a{
+    text-decoration: none;
+    color: black;
+}
+
+.project-image{
+    width : 50%;
+    padding : 1%;
+    position : absolute;
+    bottom : -10%;
+    right: -5%;
+}
+
+.project-image>img{
+    width : 15em;
+    height: 15em;
+    border : 2px solid whitesmoke;
+    box-shadow: -5px -1px 6px 1px var(--teal);
+}
+
+footer{
+    background-color: var(--yellow);
+    height: 20em;
+    padding : 2%;
+}
+
+footer>.container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo-footer{
+    width : 55%;
+    height: 55%; 
+}
+.logo-footer>img{
+    width : 100%;
+    height: 100%;
+}
